@@ -88,7 +88,7 @@ class ReferenceBook extends Book {
     this.category = category;
   }
 
-  displayInfo() {`														1`q
+  displayInfo() {`														1`
     super.displayInfo();
     console.log(`Category: ${this.category}`);
     console.log('---------------------------');
