@@ -1,0 +1,101 @@
+
+// Step 1: Create a Book class
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.isBorrowed = false;
+  }
+
+  borrowBook() {
+    this.isBorrowed = true;
+  }
+
+  returnBook() {
+    this.isBorrowed = false;
+  }
+
+  displayInfo() {
+    console.log(`Title: ${this.title}`);
+    console.log(`Author: ${this.author}`);
+    console.log(`Borrowed: ${this.isBorrowed ? 'Yes' : 'No'}`);
+    console.log('---------------------------');
+  }
+}
+
+// Step 2: Create a Library class
+class Library {
+  constructor(name) {
+    this.name = name;
+    this.books = [];
+  }
+
+  addBook(book) {
+    this.books.push(book);
+  }
+
+  borrowBook(title) {
+    const book = this.books.find(book => book.title === title);
+    if (book && !book.isBorrowed) {
+      book.borrowBook();
+      console.log(`You have borrowed "${book.title}" by ${book.author}.`);
+    } else {
+      console.log(`Sorry, "${title}" is either not available or already borrowed.`);
+    }
+  }
+
+  returnBook(title) {
+    const book = this.books.find(book => book.title === title);
+    if (book && book.isBorrowed) {
+      book.returnBook();
+      console.log(`You have returned "${book.title}" by ${book.author}.`);
+    } else {
+      console.log(`"${title}" is not currently borrowed.`);
+    }
+  }
+
+  displayBooks() {
+    console.log(`Books in ${this.name}:`);
+    this.books.forEach(book => book.displayInfo());
+  }
+}
+
+// Step 3: Implement the Library Management System
+const myLibrary = new Library('My Library');
+
+const book1 = new Book('The Catcher in the Rye', 'J.D. Salinger');
+const book2 = new Book('To Kill a Mockingbird', 'Harper Lee');
+const book3 = new Book('1984', 'George Orwell');
+
+myLibrary.addBook(book1);
+myLibrary.addBook(book2);
+myLibrary.addBook(book3);
+
+console.log(`Welcome to ${myLibrary.name}!`);
+
+const borrowTitle = prompt('Enter the title of the book you want to borrow:');
+myLibrary.borrowBook(borrowTitle);
+
+const returnTitle = prompt('Enter the title of the book you want to return:');
+myLibrary.returnBook(returnTitle);
+
+myLibrary.displayBooks();
+
+// Step 4: Implement Inheritance
+class ReferenceBook extends Book {
+  constructor(title, author, category) {
+    super(title, author);
+    this.category = category;
+  }
+
+  displayInfo() {`														1`q
+    super.displayInfo();
+    console.log(`Category: ${this.category}`);
+    console.log('---------------------------');
+  }
+}
+
+const referenceBook = new ReferenceBook('JavaScript: The Good Parts', 'Douglas Crockford', 'Programming');
+myLibrary.addBook(referenceBook);
+
+myLibrary.displayBooks();

@@ -1,0 +1,112 @@
+
+Exercise A: Basic Objects
+
+const person = {};
+person.name = 'John';
+person.age = 30;
+person.gender = 'Male';
+
+console.log(person);
+
+
+Exercise B: Constructor Function
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+
+const myCar = new Car('Toyota', 'Camry', 2022);
+console.log(myCar);
+
+Exercise C: Object Properties
+
+const student = {
+  name: 'Alice',
+  age: 20,
+  grades: [80, 85, 90, 95],
+  calculateAverage: function() {
+//multiple ways to write this
+//array method reduce: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce 
+    const sum = this.grades.reduce((acc, curr) => acc + curr, 0);
+    return sum / this.grades.length;
+  }
+};
+
+console.log(student.calculateAverage());
+
+
+Exercise D: Deleting a Property
+
+const person = {
+  name: 'John',
+  age: 30,
+  gender: 'Male'
+};
+
+delete person.gender;
+
+console.log(person);
+
+
+Exercise E: Closures
+
+//multiple ways to write this
+function outerFunction() {
+  const outerVariable = 'Hello';
+
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+
+  return innerFunction;
+}
+
+const result = outerFunction();
+result();
+
+
+Exercise F: Immediately Invoked Function Expression (IIFE)
+
+(function() {
+  const message = 'Hello, IIFE!';
+  console.log(message);
+})();
+
+
+Exercise G: Prototype
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function() {
+  console.log(`Hello, my name is ${this.name}.`);
+};
+
+const person1 = new Person('John', 25);
+person1.greet();
+
+Exercise H: Inheritance in JavaScript
+
+function Animal(name, sound) {
+  this.name = name;
+  this.sound = sound;
+}
+
+Animal.prototype.makeSound = function() {
+  console.log(this.sound);
+};
+
+function Dog(name, sound, breed) {
+  Animal.call(this, name, sound);
+  this.breed = breed;
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+const dog1 = new Dog('Max', 'Woof', 'Labrador');
+dog1.makeSound();
