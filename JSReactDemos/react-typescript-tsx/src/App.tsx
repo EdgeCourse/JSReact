@@ -13,7 +13,7 @@ type ITodo = {
   title: string;
   completed: boolean;
 }
-
+//type alias
 type ITodos = {
   todos: ITodo[],
 }
