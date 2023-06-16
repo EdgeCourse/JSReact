@@ -1,3 +1,9 @@
+/*
+this uses:
+type alias (vs interface): https://blog.bitsrc.io/type-vs-interface-in-typescript-cf3c00bc04ae 
+data types, including primitives, composites, functions and function return types: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html 
+generics: https://www.typescriptlang.org/docs/handbook/2/generics.html 
+*/
 import React from 'react';
 import './App.css';
 
