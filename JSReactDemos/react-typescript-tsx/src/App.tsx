@@ -7,6 +7,7 @@ generics: https://www.typescriptlang.org/docs/handbook/2/generics.html
 import React from 'react';
 import './App.css';
 
+//type alias
 type ITodo = {
   id: number;
   title: string;
@@ -16,7 +17,7 @@ type ITodo = {
 type ITodos = {
   todos: ITodo[],
 }
-
+//generic type
 function App() {
   const [todos, setTodos] = React.useState<ITodos>({todos: []});
   const addTodos = (title: string) => { 
@@ -27,6 +28,7 @@ function App() {
       ]
     });
   };
+  //data type
   const deleteTodos = (id: number) => {
     setTodos({
       todos: todos.todos.filter(t => t.id !== id)
