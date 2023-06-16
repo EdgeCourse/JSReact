@@ -1,0 +1,32 @@
+  [
+    {
+      question: 'What is React?',
+      options: ['A JavaScript library for building user interfaces', 'A programming language', 'A database management system', 'A design framework'],
+      answer: 0
+    },
+    {
+      question: 'What does JSX stand for?',
+      options: ['JavaScript XHR','JavaScript XML',  'JavaScript Syntax Extension', 'JavaScript X-Frame'],
+      answer: 
+    },
+    {
+      question: 'What is the virtual DOM in React?',
+      options: ['A technique for optimizing rendering in React', 'A data structure that stores React components', 'A lightweight version of the actual DOM', 'An API for handling AJAX requests'],
+      answer: 
+    },
+    {
+      question: 'What are React hooks?',
+      options: ['Functions that let you use state and other React features without writing a class', 'CSS-in-JS libraries', 'Testing utilities for React components', 'Backend frameworks for React'],
+      answer: 
+    },
+    {
+      question: 'What is the purpose of the useEffect hook?',
+      options: ['To handle form validation in React', 'To create reusable custom hooks', 'To handle routing in React applications', 'To perform side effects in functional components'],
+      answer: 
+    },
+    {
+      question: 'What is Redux?',
+      options: ['A predictable state container for JavaScript applications', 'A testing framework for React', 'A build tool for bundling JavaScript code', 'A styling solution for React components'],
+      answer: 
+    }
+  ];
